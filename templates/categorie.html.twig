@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégories{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/categorie.css') }}">
+{% endblock %}
+
+{% block body %}
+<h2 class="text-center mb-4 mt-5">Catégories</h2>
+
+<div class="container">
+    <div class="row">
+        {% for categorie in categories %}
+            <div class="col-md-4 mb-4">
+                <div class="card cardcategorie">
+                    <a href="{{ path('subcategory_list', { id: categorie.id }) }}" class="stretched-link">
+                        {% if categorie.nom == 'Machines' %}
+                            <img src="{{ asset('images/machine-a-coudre.jpg') }}" class="card-img-top" alt="Machines à coudre" style="width: 100%; height: 200px; object-fit: cover;">
+                        {% elseif categorie.nom == 'Tissus' %}
+                            <img src="{{ asset('images/tissus.jpg') }}" class="card-img-top" alt="Tissus" style="width: 100%; height: 200px; object-fit: cover;">
+                        {% elseif categorie.nom == 'Accessoires' %}
+                            <img src="{{ asset('images/accessoires.jpg') }}" class="card-img-top" alt="Accessoires" style="width: 100%; height: 200px; object-fit: cover;">
+                        {% elseif categorie.nom == 'Patrons' %}
+                            <img src="{{ asset('images/patrons.jpg') }}" class="card-img-top" alt="Patron" style="width: 100%; height: 200px; object-fit: cover;">
+                        {% elseif categorie.nom == 'Kits de Couture' %}
+                            <img src="{{ asset('images/kit-de-couture.jpg') }}" class="card-img-top" alt="Kits de Couture" style="width: 100%; height: 200px; object-fit: cover;">
+                        {% elseif categorie.nom == 'Livres de Couture' %}
+                            <img src="{{ asset('images/livres.jpg') }}" class="card-img-top" alt="Livres" style="width: 100%; height: 200px; object-fit: cover;">
+                        {% else %}
+                            <img src="{{ asset('images/image-defaut.jpg') }}" class="card-img-top" alt="Image de {{ categorie.nom }}" style="width: 100%; height: 200px; object-fit: cover;">
+                        {% endif %}
+                        <div class="card-body cardcategorie text-center">
+                            <h5 class="card-title"><a href="{{ path('subcategory_list', { id: categorie.id }) }}" class="stretched-link">{{ categorie.nom }}</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% else %}
+            <div class="col-12">
+                <p>Aucune catégorie disponible</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

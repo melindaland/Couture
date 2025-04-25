@@ -1,0 +1,126 @@
+/* Catégories et Sous-catégories */
+:root {
+    --vert: #0b7a69;
+    --clair: #8abbb4;
+    --orange: #ff6200;
+    --jaune: #ffcb05;
+}
+
+/* catégories */
+.cardcategorie a {
+    text-decoration: none;
+    color: var(--vert);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient(#031715d2, #031715d2);
+    z-index: 1;
+    opacity: 70%;
+}
+
+/* Sous-Catégories */
+/* section principale de la catégorie avec image de fond */
+.categorie-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 30vh;
+    text-align: center;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.categorie-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#031715d2, #031715d2), url('/images/image-defaut.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 80%;
+    z-index: 1;
+}
+
+.categorie-banner .position-relative {
+    z-index: 2;
+    position: relative;
+    color: white;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.categorie-banner h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+
+/* Cards des sous-catégories */
+.test a {
+    text-decoration: none;
+}
+
+.custom-card {
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    height: 200px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.custom-card:hover {
+    background-color: var(--clair);
+}
+
+.custom-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.custom-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0;
+}
+
+/* alerte */
+.alert-warning {
+    border-radius: 4px;
+    font-size: 0.95rem;
+    background-color: var(--clair);
+    border: none;
+    color: #333;
+    width: 100%;
+    max-width: 400px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto 3rem auto;
+}
+
+/* Styles responsives */
+@media (max-width: 768px) {
+    .custom-card {
+        height: auto;
+        max-width: 100%;
+    }
+}

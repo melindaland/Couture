@@ -1,0 +1,39 @@
+/* Pages en Construction */
+:root {
+    --vert: #0b7a69;
+    --clair: #8abbb4;
+    --orange: #ff6200;
+    --jaune: #ffcb05;
+}
+
+.construction-page {
+    text-align: center;
+    padding: 50px;
+}
+
+.construction-page h2 {
+    font-size: 1.8rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.construction-page .icon {
+    font-size: 100px;
+    color: var(--jaune);
+    margin-bottom: 20px;
+}
+
+/* bouton retour */
+.btn-back {
+    border: none;
+    background-color: var(--jaune);
+    border-radius: 5px;
+    border: 1px solid var(--jaune);
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.btn-back:hover {
+    background-color: var(--orange);
+    color: white;
+    border-color: var(--orange);
+}

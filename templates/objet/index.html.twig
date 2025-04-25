@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Objets{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/objet.css') }}">
+{% endblock %}
+
+{% block body %}
+    <section class="objet-banner text-center my-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Objets disponibles</h2>
+        </div>
+    </section>
+
+    {% if objets is empty %}
+        <div class="container">
+            <div class="row"></div>
+            <div class="mb-3">
+                {% if is_granted('ROLE_USER') or is_granted('ROLE_PRO') or is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('app_objet_new') }}" class="btn btn-reserverobjet btn-lg">Ajouter un objet</a>
+                {% endif %}
+            </div>
+            <div class="alert alert-warning text-center">
+                <p>Aucun objet disponible pour le moment.</p>
+            </div>
+        </div>
+    {% else %}
+        <div class="container">
+            <div class="row">
+                <div class="mb-3">
+                    {% if is_granted('ROLE_USER') or is_granted('ROLE_PRO') or is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('app_objet_new') }}" class="btn btn-reserverobjet btn-lg">Ajouter un objet</a>
+                    {% endif %}
+                </div>
+                {% for objet in objets %}
+                    <div class="col-md-4 mb-4">
+                        <a href="{{ path('app_objet_show', { id: objet.id }) }}" class="text-decoration-none text-dark">
+                            <div class="card-objet h-100 border rounded shadow-sm">
+                                <img src="{{ objet.image }}" class="card-objet-img-top" alt="{{ objet.nom }}"
+                                    style="height: 200px; object-fit: cover; width: 100%;">
+                                <div class="card-objet-body text-center p-3 d-flex flex-column">
+                                    <h5 class="card-title text-center mb-3">{{ objet.nom }}</h5>
+                                    <p class="card-objet-text flex-grow-1">{{ objet.description|slice(0, 100) ~ '...' }}</p>
+                                </div>
+                                <div class="d-flex justify-content-center gap-3 mb-2">
+                                    <label class="label-custom1">{{ objet.sousCategorie.nom }}</label>
+                                    <label class="label-custom2">{{ objet.disponible ? 'Disponible' : 'Indisponible' }}</label>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

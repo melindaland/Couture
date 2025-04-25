@@ -1,0 +1,103 @@
+/* Header et Footer */
+:root {
+    --vert: #0b7a69;
+    --clair: #8abbb4;
+    --orange: #ff6200;
+    --jaune: #ffcb05;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* barre de navigation */
+.navbar {
+    background-color: var(--vert);
+}
+.navbar-brand {
+    font-weight: bold;
+    transition: color 0.3s ease;
+    color: white;
+}
+.navbar-brand:hover {
+    color: var(--jaune);
+}
+
+/* liens de la barre de navigation */
+.navbar a.nav-link {
+    position: relative;
+    color: var(--clair) !important;
+    transition: color 0.3s ease;
+}
+.navbar a.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+.navbar a.nav-link:hover {
+    color: white !important;
+}
+.navbar a.nav-link:hover::after {
+    width: 100%;
+}
+
+/* bouton toogle */
+.navbar-toggler {
+    border: 1px solid var(--jaune);
+    padding: 8px 10px;
+    border-radius: 5px;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ffcb05' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* bouton de connexion */
+.btn-outline-light {
+    border-color: white;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.btn-outline-light:hover {
+    background-color: var(--orange);
+    color: white;
+    border-color: var(--orange);
+}
+
+
+/* footer */
+footer {
+    background-color: #343a40;
+    color: white;
+}
+footer p {
+    font-size: small;
+}
+
+footer .fab {
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+footer .fab:hover {
+    color: var(--jaune);
+}
+footer .containerfooter div {
+    margin-top: 10px;
+}
+
+
+/* enlever le hover des liens dans le menu de navigation au format mobile */
+@media (max-width: 991.98px) {
+    .navbar a.nav-link::after,
+    .navbar a.nav-link:hover::after {
+        display: none;
+    }
+}
+
+

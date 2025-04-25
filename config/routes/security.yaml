@@ -1,0 +1,9 @@
+_security_logout:
+    resource: security.route_loader.logout
+    type: service
+
+ #security:
+    # Règles de sécurité pour les routes
+     #access_control:
+        # L'accès à la page de réservation est réservé aux utilisateurs connectés
+        # - { path: ^/reservation, roles: ROLE_USER }

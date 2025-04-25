@@ -1,0 +1,10 @@
+{{ form_start(form) }}
+    <div>
+        {{ form_widget(form) }}
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-enregistrer btn-lg">
+                {{ button_label|default('Enregistrer') }}
+            </button>
+        </div>
+    </div>
+{{ form_end(form) }}

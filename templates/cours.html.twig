@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cours{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/construction.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="construction-page">
+            <i class="bi bi-tools icon"></i>
+            <h2>La page "{{ titre }}" est en cours de construction</h2>
+            <a href="{{ path('accueil') }}" class="btn btn-back btn-lg">Retour à l'accueil</a>
+        </div>
+    </div>
+{% endblock %}

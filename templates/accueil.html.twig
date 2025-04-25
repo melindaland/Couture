@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/accueil.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <section class="hero-banner">
+        <div class="col-lg-8 text-center position-relative">
+            <p class="lead mt-5 mb-5 position-relative text-center">
+                Réserver des objets et proposez des cours et des tutoriels autour de la couture. Découvrez une multitude d'outils et de conseils pour vous aider dans vos réalisations.
+            </p>
+        </div>
+    </section>
+
+    <section class="container my-5">
+        <h2 class=" text-center mb-5">Explorer les <a href="{{ path('app_objet_index') }}">objets</a> disponibles</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <p>Sur notre site, vous pouvez parcourir facilement l’ensemble des objets de couture, classés par catégories (machine, tissu, accessoire...) et sous-catégories (coton, machines à coudre...). Cette organisation vous permet de trouver rapidement ce dont vous avez besoin. Chaque objet dispose d'une fiche avec ses caractéristiques, sa disponibilité et son propriétaire.</p>
+                <a href="{{ path('category_list') }}" class="btn btn-section2 btn-lg mt-3">Voir les catégories</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="custom-bg text-white py-3">
+        <div class="container text-center">
+            <p class="leadsection3 mb-2 mt-2"> Partagez votre savoir-faire avec notre communauté en proposant des 
+                <a href="{{ path('cours') }}">cours</a> et du 
+                <a href="{{ path('tutoriels') }}">matériel</a> sur la couture.</p>
+        </div>
+    </section>
+{% endblock %}

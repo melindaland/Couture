@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ sousCategorie.nom }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/objet.css') }}">
+{% endblock %}
+
+{% block body %}
+<section class="sous-categorie-banner text-center my-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Découvrez tous les objets disponibles dans {{ sousCategorie.nom }}</h2>
+    </div>
+</section>
+
+{% if objets is empty %}
+    <div class="alert alert-warning text-center">
+        <p>Aucun objet disponible dans cette sous-catégorie pour le moment.</p>
+    </div>
+{% else %}
+    <div class="container">
+        <div class="row">
+            {% for objet in objets %}
+            <div class="col-md-4 mb-4">
+                <a href="{{ path('app_objet_show', { id: objet.id }) }}" class="text-decoration-none text-dark">
+                    <div class="card-objet h-100 border rounded shadow-sm">
+                        <img src="{{ objet.image }}" class="card-objet-img-top" alt="{{ objet.nom }}" style="height: 200px; object-fit: cover; width: 100%;">
+                        <div class="card-objet-body text-center p-3 d-flex flex-column">
+                            <h5 class="card-title text-center mb-3">{{ objet.nom }}</h5>
+                            <p class="card-objet-text flex-grow-1">{{ objet.description|slice(0, 100) ~ '...' }}</p>
+                            <div class="d-flex justify-content-center gap-3 mb-2">
+                                <label class="label-custom1">{{ objet.sousCategorie.nom }}</label>
+                                <label class="label-custom2">{{ objet.disponible ? 'Disponible' : 'Indisponible' }}</label>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
+{% endblock %}

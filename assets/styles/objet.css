@@ -1,0 +1,82 @@
+/* Objets */
+:root {
+    --vert: #0b7a69;
+    --clair: #8abbb4;
+    --orange: #ff6200;
+    --jaune: #ffcb05;
+}
+
+.objet-card {
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+.objet-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.objet-card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* formulaires */
+.label-custom1 {
+    background-color: var(--orange);
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px 10px;
+    color: white;
+    font-weight: bold;
+    font-size: small
+}
+
+.label-custom2 {
+    background-color: var(--jaune);
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px 10px;
+    color: #333;
+    font-weight: bold;
+    font-size: small
+}
+
+.btn-enregistrer {
+    border: none;
+    max-width: 500px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid var(--orange);
+    color: var(--orange);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-enregistrer:hover {
+    background-color: var(--orange);
+    color: white;
+    border-color: var(--orange);
+}
+
+.textsm {
+    font-size: 1rem;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* détail de l'objet */
+.btn-reserver {
+    border: none;
+    border-radius: 5px;
+    border: 1px solid var(--vert);
+    color: var(--vert);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-reserver:hover {
+    background-color: var(--vert);
+    color: white;
+    border-color: var(--vert);
+}

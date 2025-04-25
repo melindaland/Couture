@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Reservation{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/reservation.css') }}">
+{% endblock %}
+
+{% block body %}
+    <section class="reservation-section my-5 py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="form-container shadow-sm rounded bg-light">
+                        <div class="form-header text-center bg-jaune py-3">
+                            <h3>Modifier la réservation</h3>
+                        </div>
+                        <div class="form-body p-4">
+                            <p class="text-muted mb-4">Veuillez remplir le formulaire ci-dessous pour mettre à jour votre réservation.</p>
+                            {{ include('reservation/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+                            <div class="text-center mt-4">
+                                <a href="{{ path('app_reservation_index') }}" class="textsm">
+                                    <i class="bi bi-arrow-left-circle"></i> Retour à la liste des réservations
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

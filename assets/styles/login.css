@@ -1,0 +1,77 @@
+/* Connexion */
+:root {
+    --vert: #0b7a69;
+    --clair: #8abbb4;
+    --orange: #ff6200;
+    --jaune: #ffcb05;
+}
+
+body {
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Centrage de la carte */
+.cardlogin {
+    margin-top: 100px;
+    margin-bottom: 200px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* labels */
+label {
+    font-weight: 500;
+    color: #444;
+}
+
+/* inputs */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: none;
+}
+.form-control:focus {
+    border-color: var(--jaune);
+    outline: none;
+    box-shadow: none;
+}
+
+/* bouton de connexion */
+.btn-connexion {
+    border: none;
+    background-color: var(--jaune);
+    border-radius: 5px;
+    border: 1px solid var(--jaune);
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.btn-connexion:hover {
+    background-color: var(--orange);
+    color: white;
+    border-color: var(--orange);
+}
+
+/* message de connexion */
+.alert {
+    border-radius: 4px;
+    font-size: 0.95rem;
+    background-color: var(--clair);
+    border: none;
+}
+
+.text-decoration-underline {
+    color:white;
+    transition: color 0.3s ease;
+}
+.text-decoration-underline:hover {
+    color: #333;
+}

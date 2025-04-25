@@ -10,6 +10,6 @@ Fonctionnalités principales :
 - Organisation des routes et vues avec le moteur Twig en fonction des utilisateurs
 
 Identifiants : 
-Utilisateur connecté - user : 1234$$
-Utilisateur professionnel : nbvc**
-Administrateur - admin : azer**
+- Utilisateur connecté - user : 1234$$
+- Utilisateur professionnel : nbvc**
+- Administrateur - admin : azer**
